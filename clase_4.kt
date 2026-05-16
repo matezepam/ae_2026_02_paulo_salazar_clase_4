@@ -7,6 +7,16 @@ class Student(
     val isActive: Boolean
 )
 
+// Another Way to Use Switch *
+fun getStudentResult(student: Student): String {
+    return when (student.grade) {
+        in 9..10 -> "Sobresaliente"
+        in 7..8 -> "Aprobado"
+        in 0..6 -> "Reprobado"
+        else -> "Nota Invalida"
+    }
+}
+
 fun main() {
 
     val student = Student(
@@ -62,7 +72,13 @@ fun main() {
 
     val students = listOf(student, student2, student3)
 
-    // Print Student Name and Grade
+    
+    // Print Student Name Grade and Result *
+    for (miVariable in students) {
+        println("${miVariable.name} ${miVariable.grade} ${getStudentResult(miVariable)}")
+    }
+    
+    //    // Print Student Name and Grade
     for (miVariable in students) {
         println("${miVariable.name} ${miVariable.grade}")
     }
