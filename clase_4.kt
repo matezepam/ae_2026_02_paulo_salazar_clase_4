@@ -1,10 +1,33 @@
-fun main() {
-    val id: Long = 123456789L
-    val name: String = "Mateo"
-    val lastname: String = "Salazar"
-    val email: String = "mateosalazar@hotmail.com"
+class Student(
+    val id: Long,
+    val name: String,
+    val lastname: String,
+    val email: String,
+    val grade: Int,
+    val isActive: Boolean
+)
 
-    println("ID: $id")
-    println("Hi, $name $lastname!")
-    println("Email: $email")
+fun main() {
+
+    val student = Student(
+        id = 1L,
+        name = "Mateo",
+        lastname = "Salazar",
+        email = "mateosalazar@hotmail.com",
+        grade = 8,
+        isActive = true
+    )
+
+    println("ID: ${student.id}")
+    println("Name: ${student.name}")
+    println("Lastname: ${student.lastname}")
+    println("Email: ${student.email}")
+    println("Grade: ${student.grade}")
+    println("Active: ${student.isActive}")
+
+    if (student.isActive) {
+        println("El estudiante ${student.name} está activo")
+    } else {
+        println("El estudiante ${student.name} no está activo")
+    }
 }
