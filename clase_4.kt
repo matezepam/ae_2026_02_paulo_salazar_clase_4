@@ -72,4 +72,17 @@ fun main() {
         val statusStudent = if (miVariable.isActive) "Activo" else "Inactivo"
         println("${miVariable.name} - ${miVariable.grade} - $statusStudent")
     }
+
+    // Switch - Grade classification
+    for (miVariable in students) {
+
+        val result = when (miVariable.grade) {
+            in 9..10 -> "Sobresaliente"
+            in 7..8 -> "Aprobado"
+            in 0..6 -> "Reprobado"
+            else -> "Nota Invalida"
+        }
+
+        println("${miVariable.name}: $result")
+    }
 }
