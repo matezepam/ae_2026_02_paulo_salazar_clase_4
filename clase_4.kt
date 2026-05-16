@@ -30,15 +30,46 @@ fun main() {
     } else {
         println("El estudiante ${student.name} no está activo")
     }
-    
-// Condicional 
 
-	val status: String = if(student.isActive){
-    	"Activo"
-} else {
+    // Conditional
+    val status: String = if (student.isActive) {
+        "Activo"
+    } else {
         "Inactivo"
     }
-    
+
     println("El estudiante ${student.name} esta $status")
 
+    // Add Students
+
+    val student2 = Student(
+        id = 2L,
+        name = "Sofia",
+        lastname = "Ramirez",
+        email = "sofia.ramirez@yahoo.com",
+        grade = 9,
+        isActive = true
+    )
+
+    val student3 = Student(
+        id = 3L,
+        name = "Carlos",
+        lastname = "Mendoza",
+        email = "carlos.mendoza@outlook.com",
+        grade = 6,
+        isActive = false
+    )
+
+    val students = listOf(student, student2, student3)
+
+    // Print Student Name and Grade
+    for (miVariable in students) {
+        println("${miVariable.name} ${miVariable.grade}")
+    }
+
+    // Print Active Status
+    for (miVariable in students) {
+        val statusStudent = if (miVariable.isActive) "Activo" else "Inactivo"
+        println("${miVariable.name} - ${miVariable.grade} - $statusStudent")
+    }
 }
