@@ -30,4 +30,15 @@ fun main() {
     } else {
         println("El estudiante ${student.name} no está activo")
     }
+    
+// Condicional 
+
+	val status: String = if(student.isActive){
+    	"Activo"
+} else {
+        "Inactivo"
+    }
+    
+    println("El estudiante ${student.name} esta $status")
+
 }
